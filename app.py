@@ -19,12 +19,11 @@ def helloWorld():
 
 @app.route("/font_recommend_test", methods=['GET', 'POST'])
 def font_recommend():
-  #가중치 -> 나중에 사용자 입력 값으로 수정
-  total_weights = [2,1,3]
 
   # POST 요청으로부터 font_names 받아오기
   font_model.font_names = request.json.get('font_names', [])
   font_model.weights = request.json.get('weights', [])
+  font_model.total_weights = request.json.get('total_weights', []) #형태소, 골격, 굵기 가중치 순
 
   # if font_model.weights==1: #디폴트 값 설정
   #   print('기존 weight',font_model.weights)
