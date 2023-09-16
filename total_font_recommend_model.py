@@ -381,6 +381,7 @@ def total_model_recommend(total_weights):
     filtered_search_rank = font_search_rank[~font_search_rank['fontname'].isin(font_names)]
     fontname_values = filtered_search_rank['fontname'][:10].values
     search_rank_list = fontname_values.tolist()
+    print(total_weights)
     return search_rank_list
 
 
@@ -388,5 +389,6 @@ def total_model_recommend(total_weights):
 total_weights = [] #형태소, 골격, 굵기 가중치 순
 weights = [] # 입력 폰트들의 가중치
 font_names = [] #입력 폰트 이름(2개 이상)
+
 #search_rank_list = total_model_recommend(total_weights)
 #print(search_rank_list)
